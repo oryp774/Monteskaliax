@@ -1,0 +1,27 @@
+{
+    "name": "monteskaliax",
+    "version": "1.0.0",
+    "description": "Le bot discord que tu veux",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@discordjs/builders": "^0.13.0",
+        "@discordjs/rest": "^0.4.1",
+        "discord-api-types": "^0.33.1",
+        "discord.js": "^12.5.3",
+        "dotenv": "^16.0.1",
+        "fs": "^0.0.2"
+    },
+    "engines": {
+        "node": "16.x"
+    },
+    "repository": {
+        "url": "https://github.com/IceroDev/Discord-Bot-Template"
+    },
+    "license": "MIT",
+    "keywords": [
+        "Monteskaliax"
+    ]
+}
