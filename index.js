@@ -1,36 +1,14 @@
-const { Client, Intents } = require('discord.js');
-const { token } = require('./config.json');
+const Discord = require('discord.js')
+const bot = new Discord.Client()
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+bot.on('ready', function() {
+    console.log("Je suis connecté !")
+})
 
-const fs = require('node:fs');
-const path = require('node:path');
-const { Client, Collection, Intents } = require('discord.js');
-const { token } = require('./config.json');
-client.commands = new Collection();
+bot.login('TOKEN')
 
-
-client.once('ready', () => {
-    console.log('Ready!');
-});
-
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
-
-    const { commandName } = interaction;
-
-    if (commandName === 'ping') {
-        await interaction.reply('Pong!');
-    } else if (commandName === 'beep') {
-        await interaction.reply('Boop!');
+bot.on('message', message => {
+    if (message.content === 'ping') {
+        message.reply('pong !')
     }
-});
-
-client.login(token);
-
-const { SlashCommandBuilder } = require('@discordjs/builders');
-
-const command = new SlashCommandBuilder().setName('ping').setDescription('Replies with Pong!');
-
-// Raw data that can be used to register a slash command
-const rawData = command.toJSON();
+})
